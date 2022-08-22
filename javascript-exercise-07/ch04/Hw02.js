@@ -8,9 +8,11 @@
 // 6 9
 // 4
 let a;
+let str;
 for (let i =9; i>=2;i--){
     for(let j =2;j<=i;j++){
-        console.log()
+        str=String(i*j);
+        console.log(str);
     }
 }
 
