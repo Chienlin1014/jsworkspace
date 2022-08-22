@@ -10,9 +10,12 @@
 let a;
 let str;
 for (let i =9; i>=2;i--){
+    str='';
     for(let j =2;j<=i;j++){
-        str=String(i*j);
-        console.log(str);
+        str=str+'\t'+String(i*j);
+
     }
+    console.log(str);
+    console.log()
 }
 
