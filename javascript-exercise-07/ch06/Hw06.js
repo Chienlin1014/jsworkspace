@@ -13,17 +13,18 @@
  * @param {request}body
  */
 function request(url, option, body) {
-    console.log(url);
     const opt={
+        url:url,
         method: option.method || 'GET',
-        contentType: option.contentType || 'application/x-www-form-urlencoded'
+        contentType: option.contentType || 'application/x-www-form-urlencoded',
+        body:body
     };
-    console.log(opt);
-    console.log(body);
+
+    return opt;
 }
 let option={
     method:undefined,  // ‘POST’
     contentType:undefined // ‘application/json’
 };
 
-request('https://',option,'請求本體');
+console.log(request('https://www.google.com.tw/', option, '請求本體'));
