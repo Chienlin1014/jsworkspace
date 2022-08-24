@@ -11,13 +11,11 @@
 //     ]
 let a=[];
 let b=[];
-for (let i =0, x=9; i<8;i++,x--){
-    for(let j =7,y=2;j>=0;j--,y++){
-        a[i]=x*y
+    for (let i = 9,l=9; i >= 2; i--,l--) {
+        for (let j = 2,k=0; j <= i; j++,k++) {
+            a[k] = i * j;
 
         }
-     }
-
-
-
-
+        b[i-l]=a;
+    }
+    console.log(b)

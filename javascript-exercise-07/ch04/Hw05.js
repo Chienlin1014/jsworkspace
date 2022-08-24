@@ -3,10 +3,10 @@
 let yyyy=2021;
 let month=2;
 let dates= [31,28,31,30,31,30,31,31,30,31,30,31];
-if ((yyyy%4==0&&yyyy%100!=0)||yyyy%400==0) {
+if ((yyyy%4===0&&yyyy%100!==0)||yyyy%400===0) {
     dates[1]=29;
 }
-console.log(yyyy+'年'+month+'月，有'+dates[month-1]+'天');
+console.log(`${yyyy}年${month}月，有${dates[month - 1]}天`);
 
 
 

@@ -14,3 +14,4 @@ for (let i = 3; i <= n; i++) {
     }
 }
 console.log("1-n之質數和：" + prime);
+
