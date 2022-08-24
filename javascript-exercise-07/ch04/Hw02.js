@@ -12,7 +12,7 @@ let str;
 for (let i =9; i>=2;i--){
     str='';
     for(let j =2;j<=i;j++){
-        str=str+'\t'+String(i*j);
+        str=str+' '+String(i*j);
 
     }
     console.log(str);
