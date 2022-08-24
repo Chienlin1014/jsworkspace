@@ -8,36 +8,25 @@
  */
 function calculate(arithmetic,radix, a, b) {
     let num;
-    let result;
     switch (arithmetic) {
         case '+':
             num = a + b;
+            return num.toString(radix);
             break;
         case '-':
             num = a - b;
+            return num.toString(radix);
             break;
         case '*':
             num = a * b;
+            return num.toString(radix);
             break;
         case '/':
             num = a / b;
+            return num.toString(radix);
             break;
     }
-
-    // switch (radix) {
-    //     case 2:
-    //         result=num.toString(2);
-    //         break;
-    //     case 8:
-    //         result=num.toString(8)
-    //         break;
-    //     case 16:
-    //         result=num.toString(16)
-    //         break
-    // }
-    // return result;
-    return num.toString(radix);
 }
 
-console.log(calculate('+', 2,2, 1));
+console.log(calculate('+', 16,2, 1));
 

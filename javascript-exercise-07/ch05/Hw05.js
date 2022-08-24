@@ -9,13 +9,14 @@
 //         [6, 9],
 //         [4]
 //     ]
-let a=[];
-let b=[];
-    for (let i = 9,l=9; i >= 2; i--,l--) {
-        for (let j = 2,k=0; j <= i; j++,k++) {
-            a[k] = i * j;
-
-        }
-        b[i-l]=a;
+let arr1=[];
+let arr2=[]
+for (let i =9; i>=2;i--){
+    arr1=[];
+    for(let j =2;j<=i;j++){
+     arr1[arr1.length]=i*j;
     }
-    console.log(b)
+   arr2[arr2.length]=arr1;
+}
+console.log(arr2);
+console.table(arr2);
