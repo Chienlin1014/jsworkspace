@@ -13,9 +13,9 @@ for (let i = 0; i < mySkills.length; i++) {
 str=str.sort(); // 排列所有字母
 // console.log(str); //確認是否所有字母都有排到
 let alphabet=[]; //預定做成二維陣列
-let letter=[]; //存放同字母之陣列(用來判斷字母數量)
+ //存放同字母之陣列(用來判斷字母數量)
 for (let i = 0; i <str.length ; ) {
-    letter=[]; //每次都初始化存放字母之陣列
+    let letter=[]; //每次都初始化存放字母之陣列
     for (let j = 0; j <str.length ; j++) {
         if (str[i] === str[j]) {
             letter[letter.length] = str[i]; //將相同的字母存入letter陣列
@@ -27,4 +27,20 @@ for (let i = 0; i <str.length ; ) {
 for (let i = 0; i < alphabet.length; i++) {
     console.log('字母' + alphabet[i][0] + '，共有' + alphabet[i].length + '個');
 
+}
+console.log('方法2')
+alphabet=[];
+letter = [];
+for (let i = 'a'.charCodeAt(); i <='z'.charCodeAt() ; i++) {
+    let count=0;
+    for ( alphabet of mySkills) {
+        for (letter of alphabet) {
+            if (letter === String.fromCharCode(i)) {
+                count++;
+            }
+        }
+    }
+    if (count !== 0) {
+        console.log('字母'+String.fromCharCode(i) + '，共有' + count + '個');
+    }
 }

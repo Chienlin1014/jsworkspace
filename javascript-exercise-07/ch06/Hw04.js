@@ -7,7 +7,7 @@
  * @param {number[]}nums nums: 運算元陣列
  * @returns {string} 回傳: 算術運算的結果
  */
-function calculate2(arithmetic,radix,nums) {
+function calculate2(arithmetic,radix=10,nums) {
     let result=0;
     switch (arithmetic) {
         case '+':
