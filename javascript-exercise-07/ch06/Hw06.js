@@ -13,14 +13,12 @@
  * @param {request}body
  */
 function request(url, option, body) {
-    const opt={
-        url:url,
+    return {
+        url: url,
         method: option.method || 'GET',
         contentType: option.contentType || 'application/x-www-form-urlencoded',
-        body:body
+        body: body
     };
-
-    return opt;
 }
 let option={
     method:undefined,  // ‘POST’

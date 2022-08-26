@@ -15,9 +15,9 @@
 const arr=[1,2,3,4,5];
 function filter(arr, filtCondition) {
     let arr2=[];
-    for(let i=0;i<arr.length;i++){
-        if(filtCondition(arr[i])===true){
-            arr2[arr2.length]=arr[i];
+    for(const element of arr) {
+        if (filtCondition(element) === true) {
+            arr2[arr2.length] = element;
         }
     }
     return arr2;

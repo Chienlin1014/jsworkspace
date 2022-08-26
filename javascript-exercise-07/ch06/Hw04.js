@@ -15,14 +15,12 @@ function calculate2(arithmetic,radix=10,nums) {
                 result+=a;
             }
             return result.toString(radix);
-            break;
         case '*':
             result=1;
             for (let a of nums) {
                 result*=a;
             }
             return result.toString(radix);
-            break;
     }
 }
 let arr=[1,2,3,4];

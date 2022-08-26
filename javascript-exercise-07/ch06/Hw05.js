@@ -16,7 +16,6 @@ function calShapeArea(type,data) {
     switch (type) {
         case 0:
             return data.r**2*data.PI;
-            break;
         case 1:
             return data.length*data.width;
     }

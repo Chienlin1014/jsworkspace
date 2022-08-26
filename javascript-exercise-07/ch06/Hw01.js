@@ -12,19 +12,15 @@ function calculate(arithmetic,radix, a, b) {
         case '+':
             num = a + b;
             return num.toString(radix);
-            break;
         case '-':
             num = a - b;
             return num.toString(radix);
-            break;
         case '*':
             num = a * b;
             return num.toString(radix);
-            break;
         case '/':
             num = a / b;
             return num.toString(radix);
-            break;
     }
 }
 
