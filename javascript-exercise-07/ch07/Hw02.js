@@ -9,9 +9,9 @@
 // div(a, b): 除法
 
 class Calculator{
-    radix=10;
+    radix;
 
-    constructor(radix) {
+    constructor(radix=10) {
         this.radix = radix;
     }
 
@@ -26,6 +26,10 @@ class Calculator{
     }
     div(a, b) {
         return (a/b).toString(this.radix);
+    }
+    distance(a, b) {
+        return ((a.x - b.x) ** 2 + (a.y + b.y) ** 2) ** 0.5;
+
     }
 }
 let a =new Calculator(16);

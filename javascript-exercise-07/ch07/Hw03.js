@@ -12,9 +12,9 @@
 // p2: 點2，同上
 // 回傳: 2點的距離
 class Calculator{
-    radix=10;
+    radix;
 
-    constructor(radix) {
+    constructor(radix=10) {
         this.radix = radix;
     }
 
@@ -49,4 +49,4 @@ class Point {
 let p1 = new Point(0, 0);
 let p2 = new Point(3, 4);
 let cal = new Calculator(10);
-console.log(cal.distance(p1, p2));
+console.log('兩點距離為'+cal.distance(p1, p2));
