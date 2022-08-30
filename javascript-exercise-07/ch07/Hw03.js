@@ -32,7 +32,8 @@ class Calculator{
     }
 
     distance(a, b) {
-        return (((a.x - b.x) ** 2 + (a.y + b.y) ** 2) ** 0.5).toString(this.radix);
+        return ((a.x - b.x) ** 2 + (a.y + b.y) ** 2) ** 0.5;
+
     }
 }
 class Point {

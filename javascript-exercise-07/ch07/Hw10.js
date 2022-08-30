@@ -52,16 +52,6 @@ class Cat extends Pet {
     }
 }
 
-class Bird extends Pet {
-
-    constructor(nickname, age, color) {
-        super(nickname, age, color);
-    }
-    talk() {
-        super.talk();
-        console.log('呱')
-    }
-}
 class Veichle {
     tankSize;
 
@@ -81,15 +71,9 @@ class Car extends Veichle{
     }
 }
 
-class Plane extends Veichle {
-
-    constructor(tankSize) {
-        super(tankSize);
-    }
-}
 
 let a =new Cat('X',5,'black')
-let b =new Veichle(50)
+let b =new Car(50)
 let my = new Owner('bee',a,b);
 my.walkPet()
 my.drive()
