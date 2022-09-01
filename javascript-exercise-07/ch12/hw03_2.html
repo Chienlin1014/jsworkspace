@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+
+</table>
+<script>
+  const colNames = ['編號', '使用者名', '密碼', '暱稱', '帳號啟用否', '註冊日期時間'];
+  const users = [
+    { id: 1, username: 'william1234', password: 'P@ssw0rd', nickname: 'William', pass: true, registerDateTime: '2016/12/05 12:34:56' },
+    { id: 2, username: 'vera1211', password: '12345678', nickname: 'Vera', pass: false, registerDateTime: '2019/01/07 11:22:33' },
+    { id: 3, username: 'reds1210', password: '!QAZ2wsx', nickname: 'Reds', pass: true, registerDateTime: '2015/03/06 10:20:30' }
+  ];
+  const rootTable = document.querySelector('table');
+  const thead = document.createElement("thead");
+  rootTable.insertAdjacentElement('afterbegin', thead);
+  const tr = document.createElement('tr');
+  thead.insertAdjacentElement('afterbegin', tr)
+  for (let colName of colNames) {
+    const th = document.createElement('th');
+    th.textContent=colName;
+    tr.insertAdjacentElement('afterbegin',th)
+  }
+  const tbody
+</script>
+</body>
+</html>
