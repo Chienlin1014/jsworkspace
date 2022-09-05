@@ -16,9 +16,12 @@
   </thead>
   <tbody></tbody>
 </table>
+<div></div>
 <script>
   const tbody = document.querySelector('tbody');
+  const div =document.querySelector('div')
   const shoppingCart = JSON.parse(sessionStorage.getItem('shoppingCart')) ?? [];
+  let total =0;
   for (let book of shoppingCart) {
     tbody.innerHTML+=`
   <tr>
@@ -26,7 +29,9 @@
     <td>${book.title}</td>
     <td>${book.unitPrice}</td>
   </tr>`
+      total+=book.unitPrice;
   }
+  div.textContent=total;
 </script>
 
 </body>
