@@ -1,20 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <style>
+        .container {
+            width: 500px;
+            margin: 0 auto;
+            border-radius: 20px;
+            padding: 5px;
+        }
+
+        /* 邊框樣式 */
+        .border {
+            border: grey 1px solid;
+        }
+
+        .center {
+            text-align: center;
+            margin: 5px;
+        }
+
+        /* (列表中的) 項目樣式 */
+        .todo-item {
+            margin: 5px;
+            padding: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* 外保留距離樣式 */
+        .m-1 {
+            margin: 5px;
+        }
+
+        button {
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+        }
+
+        /* (列表中的) 已完成項目樣式 */
+        .isCompleted {
+            text-decoration: line-through;
+        }
+
+        input {
+            width: 440px;
+            height: 40px;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
-<div id="div1">
-  <button id="bt1">A</button>
-  <button id="bt2">B</button>
-  <button id="bt3">C</button>
-  <button id="bt4">D</button>
-  <button id="bt5">E</button>
-</div>
+<div class="border container">
+    <h2 class="center">TodoList</h2>
+    <div class="m-1" >
+        <input type="text" placeholder=" I am going to do..">
+        <button class="circle" id="add-todo">+</button>
+    </div>
 
+    <div id="todo-list" >
+<!--        <div class="border todo-item">-->
+<!--                <span>-->
+<!--                1. HTML-->
+<!--                </span>-->
+<!--                <span>-->
+<!--                    <button>v</button>-->
+<!--                    <button>O</button>-->
+<!--                    <button>x</button>-->
+<!--                </span>-->
+<!--        </div>-->
+    </div>
+</div>
 <script>
-  document.querySelector('#div1').addEventListener('click',e=>)
+    // TodoList的項目陣列
+    const list = [
+        { id: 1, title: 'HTML', completed: false },
+        { id: 2, title: 'CSS', completed: false },
+        { id: 3, title: 'JavaScript', completed: false }
+    ];
+    // 下一個項目的id
+    let nextId = list.length + 1;
+    const rootDiv = document.querySelector('#todo-list');
+    render(list);
+
+    // rootDiv.insertAdjacentElement()
+    /**
+     * [顯示]列表中的項目
+     * @param {Array} list: 欲顯示的列表
+     */
+    function render(list) {
+        for (let li of list) {
+            const div = document.createElement('div');
+            const span1 = document.createElement('span');
+            span1.textContent = li['id'] + li['title'];
+            const span2 = document.createElement('span');
+            span1.append(span2);
+            const button1 = document.createElement('button');
+            button1.textContent='x'
+            const button2 = document.createElement('button');
+            button2.textContent='p'
+            const button3 = document.createElement('button');
+            button3.textContent='v'
+            span2.append(button1);
+            span2.append(button2);
+            span2.append(button3);
+
+            rootDiv.insertAdjacentElement('afterbegin',div);
+            div.insertAdjacentElement('afterbegin',span1);
+        }
+    }
+
+    /**
+     * [刪除]列表中的項目
+     * @param {number} id: 欲刪除的項目之id
+     */
+    function deleteTodoItem(id) {
+        // TODO
+    }
+
+    /**
+     * 改變項目成[可編輯狀態]
+     * @param {number} id: 欲編輯的項目之id
+     */
+    function editTodoItem(id) {
+        // TODO
+    }
+
+    /**
+     * [儲存]編輯完的項目
+     * @param {number} id: 欲編輯的項目之id
+     */
+    function saveTitle(id) {
+        // TODO
+    }
+
+    /**
+     * 將項目[標記成已完成]
+     * @param {number} id: 欲編輯的項目之id
+     */
+    function completeTodoItem(id) {
+        // TODO
+    }
+
+    /**
+     * 註冊 加入項目按鈕 的 click事件監聽器
+     * 加入項目至項目陣列中，並顯示
+     */
+    document.querySelector('#add-todo').addEventListener('click', () => {
+
+        // TODO
+    });
 </script>
 </body>
 </html>

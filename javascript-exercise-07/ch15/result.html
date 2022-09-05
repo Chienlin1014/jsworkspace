@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>結帳</title>
+</head>
+<body>
+<table border="1">
+  <thead>
+  <tr>
+    <th>編號</th>
+    <th>書名</th>
+    <th>價錢</th>
+  </tr>
+
+  </thead>
+  <tbody></tbody>
+</table>
+<script>
+  const tbody = document.querySelector('tbody');
+  const shoppingCart = JSON.parse(sessionStorage.getItem('shoppingCart')) ?? [];
+  for (let book of shoppingCart) {
+    tbody.innerHTML+=`
+  <tr>
+    <td>${book.id}</td>
+    <td>${book.title}</td>
+    <td>${book.unitPrice}</td>
+  </tr>`
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="result.html">前往結帳頁面</a>
+<table border="1">
+  <thead>
+  <tr>
+    <th>編號</th>
+    <th>書名</th>
+    <th>出版商</th>
+    <th>價錢</th>
+    <th>作者</th>
+    <th>圖</th>
+    <th>購買</th>
+  </tr>
+<!--  <tr>-->
+<!--    <td></td>-->
+<!--    <td></td>-->
+<!--    <td></td>-->
+<!--    <td></td>-->
+<!--    <td></td>-->
+<!--    <td></td>-->
+<!--    <td></td>-->
+<!--  </tr>-->
+  </thead>
+  <tbody>
+  <tr>
+  </tr>
+  </tbody>
+</table>
+
+<script>
+  const tbody = document.querySelector('tbody');
+  let list;
+  const url='http://10.1.5.65:8080/javascript-shoppingcart-book/book/readAll';
+  fetch(url)
+    .then(resp => resp.json())
+    .then(bookList => {
+      for (let book of bookList) {
+        list = bookList;
+        tbody.innerHTML+=`
+    <tr>
+    <td>${book.id}</td>
+    <td>${book.title}</td>
+    <td>${book.companyName}</td>
+    <td>${book.unitPrice}</td>
+    <td>${book.author}</td>
+    <td><img src="${base64ToUrl(book.img)}" style="width: 100px"> </td>
+
+    <td><button onclick="add(${book.id})">add</button></td>
+  </tr>`;
+      }
+    });
+
+  function base64ToUrl(base64Str) {
+    const binaryStr = atob(base64Str);
+    let len = base64Str.length;
+    const uint8Array = new Uint8Array(len);
+    while (len--) {
+      uint8Array[len] = binaryStr.charCodeAt(len);
+    }
+    const blob = new Blob([uint8Array]);
+    return URL.createObjectURL(blob);
+  }
+
+  function add(id) {
+    const book = list.find(e => e.id === id);
+    const shoppingCart =JSON.parse(sessionStorage.getItem('shoppingCart'))??[];
+    shoppingCart.push({id:book.id, title: book.title, unitPrice: book.unitPrice});
+    sessionStorage.setItem('shoppingCart',JSON.stringify(shoppingCart));
+
+  }
+
+</script>
+</body>
+</html>

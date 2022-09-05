@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    .container {
+      width: 500px;
+      margin: 0 auto;
+      border-radius: 20px;
+      padding: 5px;
+    }
+
+    /* 邊框樣式 */
+    .border {
+      border: grey 1px solid;
+    }
+
+    .center {
+      text-align: center;
+      margin: 5px;
+    }
+
+    /* (列表中的) 項目樣式 */
+    .todo-item {
+      margin: 5px;
+      padding: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* 外保留距離樣式 */
+    .m-1 {
+      margin: 5px;
+    }
+
+    button {
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+    }
+
+    /* (列表中的) 已完成項目樣式 */
+    .isCompleted {
+      text-decoration: line-through;
+    }
+
+    input {
+      width: 440px;
+      height: 40px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+<div class="border container">
+  <h2 class="center">TodoList</h2>
+  <div class="m-1">
+    <input type="text" placeholder=" I am going to do..">
+    <button class="circle" id="add-todo">➕</button>
+  </div>
+  <div id="todo-list">
+    <div>
+      <span>1.HTML</span>
+      <span>
+        <button>x</button>
+        <button>p</button>
+        <button>v</button>
+      </span>
+    </div>
+  </div>
+</div>
+<script>
+  // TodoList的項目陣列
+  const list = [
+    { id: 1, title: 'HTML', completed: false },
+    { id: 2, title: 'CSS', completed: false },
+    { id: 3, title: 'JavaScript', completed: false }
+  ];
+  // 下一個項目的id
+  let nextId = list.length + 1;
+
+  render(list);
+
+  /**
+   * [顯示]列表中的項目
+   * @param {Array} list: 欲顯示的列表
+   */
+  function render(list) {
+    const toDoList = document.querySelector('#todo-list');
+    for (let item of list) {
+      toDoList.innerHTML+=`
+    <div>
+      <span>${li[item.id]}. ${[item.title]}</span>
+      <span>
+        <button>x</button>
+        <button>p</button>
+        <button>v</button>
+      </span>
+    </div>
+      `
+    }
+    // TODO
+  }
+
+  /**
+   * [刪除]列表中的項目
+   * @param {number} id: 欲刪除的項目之id
+   */
+  function deleteTodoItem(id) {
+    // TODO
+  }
+
+  /**
+   * 改變項目成[可編輯狀態]
+   * @param {number} id: 欲編輯的項目之id
+   */
+  function editTodoItem(id) {
+    // TODO
+  }
+
+  /**
+   * [儲存]編輯完的項目
+   * @param {number} id: 欲編輯的項目之id
+   */
+  function saveTitle(id) {
+    // TODO
+  }
+
+  /**
+   * 將項目[標記成已完成]
+   * @param {number} id: 欲編輯的項目之id
+   */
+  function completeTodoItem(id) {
+    // TODO
+  }
+
+  /**
+   * 註冊 加入項目按鈕 的 click事件監聽器
+   * 加入項目至項目陣列中，並顯示
+   */
+  document.querySelector('#add-todo').addEventListener('click', () => {
+    // TODO
+  });
+</script>
+</body>
+</html>
