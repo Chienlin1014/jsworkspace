@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="lastPage">上一頁</button>
+<br>
+<button id="nextPage">下一頁</button>
+
+<script>
+
+  document.querySelector('#lastPage').addEventListener('click', e => {
+    history.back();
+  });
+  document.querySelector('#nextPage').addEventListener('click', e => {
+    history.forward();
+  });
+</script>
+</body>
+</html>

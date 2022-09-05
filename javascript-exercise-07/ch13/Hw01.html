@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text">
+<script>
+  const input = document.querySelector('input');
+  const eventArr = ['click', 'change', 'input', 'focus', 'blur'];
+  for (let event of eventArr) { //迭代
+      input.addEventListener(event, listener); // 選取事件 加入監聽(事件,function)
+  }
+
+  function listener(e) {
+    console.log(new Date(),e.type);
+  }
+</script>
+</body>
+</html>
